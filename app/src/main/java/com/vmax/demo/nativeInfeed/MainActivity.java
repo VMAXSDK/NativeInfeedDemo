@@ -104,12 +104,13 @@ public class MainActivity extends AppCompatActivity {
         vmaxAdView.setAdListener(new VmaxAdListener() {
             @Override
             public void onAdError(VmaxAdError error) {
-
+            InitializeRecycler();
+                Toast.makeText(getApplicationContext(),"Failed To Load Ad Please Try Again Later",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onAdReady(VmaxAdView adView) {
-                Toast.makeText(MainActivity.this, "Ad Cached", Toast.LENGTH_SHORT).show();
+
                 final NativeAd nativeAd = adView.getNativeAd();
                 nativecustomLayout.removeAllViews();
                 if (nativeAd.getNativeAdPartner() != null && nativeAd.getNativeAdPartner().equals(Constants.AdPartner.VMAX_ADMOB) &&

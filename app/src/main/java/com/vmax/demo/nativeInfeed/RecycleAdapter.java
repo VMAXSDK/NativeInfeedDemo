@@ -51,7 +51,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.TheViewH
 
         TheViewHolder theViewHolder;
         View view;
-        if(viewType==4){
+        if(viewType==4&&theAd!=null){
 
         view=theAd;
         }

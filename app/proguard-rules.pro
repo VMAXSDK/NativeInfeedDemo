@@ -25,22 +25,6 @@
 -keep class com.facebook.ads.**
 
 
-#inmobi
--keepattributes SourceFile,LineNumberTable
--keep class com.inmobi.** { *; }
--dontwarn com.inmobi.**
--dontwarn com.squareup.picasso.**
-
-# skip the Picasso library classes
--keep class com.squareup.picasso.** {*;}
--dontwarn com.squareup.picasso.**
--dontwarn com.squareup.okhttp.**
-# skip Moat classes
--keep class com.moat.** {*;}
--dontwarn com.moat.**
-#end inmobi
-
-
 #Base Sdk
 
 -keepattributes *Annotation*,JavascriptInterface,Exceptions,InnerClasses,Signature,*Annotation*,EnclosingMethod,*Annotation*,Signature
