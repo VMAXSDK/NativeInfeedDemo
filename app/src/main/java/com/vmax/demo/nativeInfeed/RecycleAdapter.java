@@ -1,13 +1,10 @@
 package com.vmax.demo.nativeInfeed;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.vmax.android.ads.api.VmaxAdView;
@@ -21,8 +18,8 @@ import java.util.ArrayList;
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.TheViewHolder> {
 
     ArrayList<BlogModel> blogList;
-    RelativeLayout theAd;
-    public RecycleAdapter(ArrayList<BlogModel> list, RelativeLayout adContainer)
+    VmaxAdView theAd;
+    public RecycleAdapter(ArrayList<BlogModel> list, VmaxAdView adContainer)
     {
         blogList=list;
        theAd=adContainer;
