@@ -11,9 +11,7 @@
     android:background="@drawable/vmax_nativeborder"
     android:paddingBottom="10dp"
     >
-    <!--android:visibility="gone"-->
-    <!--android:minHeight="300dp"-->
-    <!--android:minWidth="300dp"-->
+
 
     <ImageView
         android:src="@mipmap/ic_launcher"
