@@ -22,8 +22,9 @@ import com.vmax.android.ads.api.VmaxAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public   VmaxAdView vmaxAdView;
+    public  VmaxAdView vmaxAdView;
     RecyclerView recyclerView;
+
     RelativeLayout adContainer;
     LayoutInflater layoutInflater;
 
