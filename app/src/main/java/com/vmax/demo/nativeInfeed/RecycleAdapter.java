@@ -1,6 +1,7 @@
 package com.vmax.demo.nativeInfeed;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,20 +20,22 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.TheViewH
 
     ArrayList<BlogModel> blogList;
     VmaxAdView theAd;
-    public RecycleAdapter(ArrayList<BlogModel> list, VmaxAdView adContainer)
+    public RecycleAdapter( ArrayList<BlogModel> list,VmaxAdView vmaxAdView)
     {
         blogList=list;
-       theAd=adContainer;
+        theAd=vmaxAdView;
+
     }
 
     public class TheViewHolder extends RecyclerView.ViewHolder
     {
         ImageView blogImage;
         TextView mainTitle,date,author;
-         public TheViewHolder(View v,int position)
+        public TheViewHolder(View v,int position)
         {
             super(v);
-            if(position!=4) {
+            if(position%10!=0||position==0) {
+
                 blogImage = (ImageView) v.findViewById(R.id.blog_img);
                 mainTitle = (TextView) v.findViewById(R.id.blog_title);
                 date = (TextView) v.findViewById(R.id.blog_date);
@@ -47,11 +50,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.TheViewH
     @Override
     public TheViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        TheViewHolder theViewHolder;
-        View view;
-        if(viewType==4&&theAd!=null){
 
-        view=theAd;
+        View view;
+
+        if(viewType%10==0&&viewType!=0&&theAd!=null){
+
+            view=theAd;
         }
         else
         {
@@ -60,20 +64,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.TheViewH
         }
 
 
+
+
+
         return new TheViewHolder(view,viewType);
     }
 
     @Override
     public void onBindViewHolder(TheViewHolder holder, int position) {
 
-       if(position!=4)
-       {
-
-           holder.blogImage.setImageDrawable(blogList.get(position).getBlogImage());
-           holder.author.setText(blogList.get(position).getAuthor());
-           holder.date.setText(blogList.get(position).getDate());
-           holder.mainTitle.setText(blogList.get(position).getTitle());
-       }
+        if(position%10!=0||position==0)
+        {
+            Log.e("position",String.valueOf(position));
+            holder.blogImage.setImageDrawable(blogList.get(position).getBlogImage());
+            holder.author.setText(blogList.get(position).getAuthor());
+            holder.date.setText(blogList.get(position).getDate());
+            holder.mainTitle.setText(blogList.get(position).getTitle());
+        }
     }
 
     @Override
