@@ -2,7 +2,6 @@ package com.vmax.demo.nativeInfeed;
 
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
