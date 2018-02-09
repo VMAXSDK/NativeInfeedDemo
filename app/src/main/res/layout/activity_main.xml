@@ -8,8 +8,6 @@
 
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <!--UI Container-->
-
 <android.support.v7.widget.RecyclerView
     android:id="@+id/recy_view"
     android:scrollbars="vertical"
